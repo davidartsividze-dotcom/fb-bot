@@ -8,6 +8,9 @@ app.use(express.json());
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+if (!ANTHROPIC_API_KEY) {
+  console.error('❌ ANTHROPIC_API_KEY არ არის დაყენებული!');
+}
 const SHOP_NAME = process.env.SHOP_NAME || 'ჩვენი მაღაზია';
 
 // მომხმარებლების საუბრის ისტორია (მეხსიერება)
